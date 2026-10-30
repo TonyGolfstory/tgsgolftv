@@ -431,6 +431,68 @@ a { color: inherit; text-decoration: none; }
   .section { padding: 84px 0; }
 }
 
+/* ---------- 상단 스폰서 바 (광고 슬롯) ---------- */
+.topbar {
+  background: var(--cream);
+  color: var(--ink);
+  border-bottom: 1px solid rgba(201, 162, 75, 0.5);
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: auto;
+}
+
+.topbar-label {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: #8a6d2f;
+  white-space: nowrap;
+}
+
+.topbar-logo { height: 24px; width: auto; }
+
+.topbar-code { display: none; font-size: 0.85rem; color: #4c4636; white-space: nowrap; }
+.topbar-code strong { color: var(--ink); }
+
+.topbar-btn {
+  background: var(--orange);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 8px 18px;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.topbar-btn:hover { background: #ff8257; }
+.topbar-btn:active { transform: scale(0.97); }
+
+@media (min-width: 640px) {
+  .topbar-code { display: block; }
+  .topbar-logo { height: 28px; }
+}
+
+/* ---------- 협찬 배너 이미지 ---------- */
+.sponsor-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(240, 112, 64, 0.35);
+}
+
 /* ---------- 히어로 사진 배경 (TGS 인비테이셔널 단체사진) ---------- */
 .hero-photo {
   background:
