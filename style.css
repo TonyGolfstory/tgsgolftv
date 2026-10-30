@@ -266,6 +266,43 @@ a { color: inherit; text-decoration: none; }
 .video-body h3 { font-size: 1.05rem; font-weight: 700; word-break: keep-all; }
 .video-body p { margin-top: 6px; color: var(--cream-dim); font-size: 0.9rem; word-break: keep-all; }
 
+/* ---------- 바이럴 영상 ---------- */
+.views-chip {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  background: rgba(7, 35, 26, 0.88);
+  color: var(--gold-300);
+  border: 1px solid var(--gold-500);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+.video-thumb.portrait { aspect-ratio: 9 / 16; }
+
+.viral-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.viral-sub {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--gold-400);
+  margin: 26px 0 16px;
+}
+
+.viral-sub:first-of-type { margin-top: 0; }
+
+.featured-card { margin-bottom: 20px; }
+.featured-card .video-body h3 { font-size: 1.2rem; }
+.featured-card .video-badge { font-size: 0.75rem; padding: 5px 12px; }
+
 /* ---------- 룰 파인더 ---------- */
 .rulefinder-box {
   background: linear-gradient(135deg, var(--green-800), var(--green-900));
@@ -381,6 +418,7 @@ a { color: inherit; text-decoration: none; }
   .hero h1 { font-size: 2.7rem; }
   .hero-cta { flex-direction: row; max-width: none; justify-content: center; }
   .video-grid { grid-template-columns: repeat(3, 1fr); }
+  .viral-grid { grid-template-columns: repeat(3, 1fr); }
   .lesson-grid { grid-template-columns: repeat(2, 1fr); max-width: 760px; margin-left: auto; margin-right: auto; }
 }
 
