@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>룰 파인더 무료로 받기 — Tony Golfstory</title>
+<meta name="description" content="필드에서 헷갈리는 골프 룰, 버튼 몇 번으로 바로 찾는 Tony Golfstory 룰 파인더. 유튜브 구독·인스타 팔로우하고 무료로 열어가세요.">
+<link rel="icon" href="../assets/tgs_round_logo_fixed.png">
+<link rel="stylesheet" href="../style.css">
+<style>
+  /* ---------- 룰북 랜딩 전용 ---------- */
+  .rb-hero { padding-bottom: 40px; }
+  .rb-hero .hero-sub { max-width: 520px; }
+
+  .steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .step-card {
+    background: var(--green-800);
+    border: 1px solid rgba(201, 162, 75, 0.3);
+    border-radius: var(--radius);
+    padding: 24px 22px;
+    text-align: center;
+    transition: border-color 0.2s ease;
+  }
+
+  .step-card .step-label {
+    color: var(--gold-400);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    margin-bottom: 8px;
+  }
+
+  .step-card h3 { font-size: 1.15rem; font-weight: 800; word-break: keep-all; }
+  .step-card p { margin-top: 6px; color: var(--cream-dim); font-size: 0.92rem; word-break: keep-all; }
+  .step-card .btn { margin-top: 16px; width: 100%; }
+
+  .step-card .step-status {
+    display: block;
+    margin-top: 12px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--cream-dim);
+  }
+
+  .step-card.done { border-color: var(--gold-500); }
+  .step-card.done .step-status { color: var(--gold-300); }
+  .step-card.done .btn {
+    background: transparent;
+    border-color: var(--gold-500);
+    color: var(--gold-300);
+    pointer-events: none;
+  }
+
+  .gate-box {
+    max-width: 560px;
+    margin: 28px auto 0;
+    background: linear-gradient(135deg, var(--green-800), var(--green-900));
+    border: 1px solid var(--gold-500);
+    border-radius: var(--radius);
+    padding: 32px 24px;
+    text-align: center;
+  }
+
+  .gate-box .rf-icon { font-size: 2.4rem; margin-bottom: 10px; }
+  .gate-box h2 { font-size: 1.4rem; font-weight: 800; word-break: keep-all; }
+  .gate-box p { margin: 10px auto 22px; color: var(--cream-dim); word-break: keep-all; }
+
+  .btn-big { width: 100%; padding: 16px 22px; font-size: 1.05rem; }
+
+  .btn-locked {
+    background: var(--green-700);
+    color: var(--cream-dim);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  .already-link {
+    display: inline-block;
+    margin-top: 18px;
+    font-size: 0.88rem;
+    color: var(--cream-dim);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+  }
+  .already-link:hover { color: var(--gold-300); }
+
+  .mail-box {
+    max-width: 560px;
+    margin: 20px auto 0;
+    background: var(--green-800);
+    border: 1px solid rgba(201, 162, 75, 0.3);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .mail-box h2 { font-size: 1.25rem; font-weight: 800; word-break: keep-all; }
+  .mail-box p { margin: 10px auto 20px; color: var(--cream-dim); font-size: 0.95rem; word-break: keep-all; }
+  .mail-box .btn { width: 100%; }
+</style>
+</head>
+<body>
+
+<!-- ================= 상단 스폰서 바 ================= -->
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="topbar-brand" href="https://allg1.com/discount/TGSGOLF20" target="_blank" rel="noopener" aria-label="ALLG1 공식 스토어">
+      <span class="topbar-label">OFFICIAL PARTNER</span>
+      <img src="../assets/allg1-logo.png" alt="ALLG1" class="topbar-logo">
+    </a>
+    <span class="topbar-code">코드 <strong>TGSGOLF20</strong> · 20% 할인 · $120 이상 무료배송</span>
+    <a class="topbar-btn" href="https://allg1.com/discount/TGSGOLF20" target="_blank" rel="noopener">구매하기</a>
+  </div>
+</div>
+
+<!-- ================= 헤더 ================= -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html" aria-label="Tony Golfstory 홈">
+      <img src="../assets/tgs_round_logo_fixed.png" alt="Tony Golfstory 원형 로고">
+      <span>Tony Golfstory<span class="brand-sub">TGS GOLF TV</span></span>
+    </a>
+    <nav class="main-nav" aria-label="주 메뉴">
+      <a href="../index.html#viral">바이럴 영상</a>
+      <a href="../index.html#lesson-videos">레슨 영상</a>
+      <a href="../index.html#rulefinder">룰 파인더</a>
+      <a href="../index.html#channels">채널·SNS</a>
+      <a href="../index.html#lessons">레슨 안내</a>
+    </nav>
+    <a class="btn btn-gold btn-subscribe" href="https://www.youtube.com/@tonygolfstory?sub_confirmation=1" target="_blank" rel="noopener">▶ 유튜브 구독</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= 히어로 ================= -->
+  <section class="hero rb-hero">
+    <div class="wrap">
+      <img class="hero-logo" src="../assets/tgs_round_logo_fixed.png" alt="Tony Golfstory 로고">
+      <p class="hero-eyebrow">TGS RULE FINDER</p>
+      <h1>토니 프로의 룰 파인더,<br><span class="gold">무료로 받아가세요</span> ⛳</h1>
+      <p class="hero-sub">
+        공이 나뭇가지에 끼었을 때, 피치마크 구제는 언제 되는지 —<br>
+        필드에서 헷갈리는 룰 상황을 버튼 몇 번으로 바로 찾는 도구입니다.<br>
+        아래 두 가지만 하면 바로 열립니다.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= 스텝 & 게이트 ================= -->
+  <section class="section" style="padding-top: 8px;">
+    <div class="wrap">
+
+      <div class="steps">
+        <div class="step-card" id="stepYtCard">
+          <p class="step-label">STEP 1</p>
+          <h3>유튜브 구독하기</h3>
+          <p>매일 아침 골프 뉴스와 실전 레슨이 올라오는 채널입니다.</p>
+          <a class="btn btn-gold" id="stepYt" href="https://www.youtube.com/@tonygolfstory?sub_confirmation=1" target="_blank" rel="noopener">▶ 유튜브 구독하기</a>
+          <span class="step-status" id="stepYtStatus">아직 완료 전이에요</span>
+        </div>
+
+        <div class="step-card" id="stepIgCard">
+          <p class="step-label">STEP 2</p>
+          <h3>인스타그램 팔로우하기</h3>
+          <p>릴스와 레슨 소식이 올라오는 @tonygolfstory 계정입니다.</p>
+          <a class="btn btn-gold" id="stepIg" href="https://www.instagram.com/tonygolfstory" target="_blank" rel="noopener">인스타그램 팔로우하기</a>
+          <span class="step-status" id="stepIgStatus">아직 완료 전이에요</span>
+        </div>
+      </div>
+
+      <div class="gate-box" id="gateBox">
+        <div class="rf-icon">⛳</div>
+        <h2>룰 파인더 열기</h2>
+        <p id="gateMsg">구독·팔로우 후 열립니다. 위 두 단계를 완료해 주세요.</p>
+        <a class="btn btn-gold btn-big btn-locked" id="rfOpen" href="https://tonygolfstory.github.io/tgs-rule-finder/" target="_blank" rel="noopener" aria-disabled="true">🔒 룰 파인더 열기</a>
+        <br>
+        <a class="already-link" id="alreadyDone" href="#">이미 구독·팔로우 중이에요</a>
+      </div>
+
+      <div class="mail-box">
+        <h2>📬 룰북·새 영상 소식, 메일로 받기</h2>
+        <p>룰북 업데이트와 새 영상 소식을 이메일로 보내드립니다. 이메일 주소 하나만 남겨 주세요.</p>
+        <a class="btn btn-outline" href="https://docs.google.com/forms/d/e/1FAIpQLScWCfjK_3pqVAxOkb_AXLWIZ5aYGYSbBRJlcSTKNJV5aik_ag/viewform" target="_blank" rel="noopener">이메일로 소식 받기</a>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= 푸터 ================= -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-links">
+      <a href="https://www.youtube.com/@tonygolfstory" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.instagram.com/tonygolfstory" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@tonylee4692" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.threads.com/@tonygolfstory" target="_blank" rel="noopener">Threads</a>
+      <a href="https://www.facebook.com/tonyleel1" target="_blank" rel="noopener">Facebook</a>
+      <a href="mailto:tonygolfstory@gmail.com">tonygolfstory@gmail.com</a>
+    </div>
+    <p>Tony Golfstory · Fullerton, Orange County, CA</p>
+    <p class="copyright">© 2026 Tony Golfstory. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var KEY_YT = "tgs_rf_step_yt";
+  var KEY_IG = "tgs_rf_step_ig";
+
+  function get(k) { try { return localStorage.getItem(k) === "1"; } catch (e) { return false; } }
+  function set(k) { try { localStorage.setItem(k, "1"); } catch (e) {} }
+
+  var state = { yt: get(KEY_YT), ig: get(KEY_IG) };
+
+  var ytCard = document.getElementById("stepYtCard");
+  var igCard = document.getElementById("stepIgCard");
+  var ytStatus = document.getElementById("stepYtStatus");
+  var igStatus = document.getElementById("stepIgStatus");
+  var openBtn = document.getElementById("rfOpen");
+  var gateMsg = document.getElementById("gateMsg");
+
+  function render() {
+    if (state.yt) {
+      ytCard.classList.add("done");
+      ytStatus.textContent = "✓ 완료 — 구독 감사합니다!";
+    }
+    if (state.ig) {
+      igCard.classList.add("done");
+      igStatus.textContent = "✓ 완료 — 팔로우 감사합니다!";
+    }
+    if (state.yt && state.ig) {
+      openBtn.classList.remove("btn-locked");
+      openBtn.removeAttribute("aria-disabled");
+      openBtn.textContent = "⛳ 룰 파인더 열기";
+      gateMsg.textContent = "완료됐습니다! 아래 버튼으로 룰 파인더를 여세요.";
+    }
+  }
+
+  document.getElementById("stepYt").addEventListener("click", function () {
+    state.yt = true; set(KEY_YT); render();
+  });
+  document.getElementById("stepIg").addEventListener("click", function () {
+    state.ig = true; set(KEY_IG); render();
+  });
+
+  document.getElementById("alreadyDone").addEventListener("click", function (e) {
+    e.preventDefault();
+    state.yt = true; state.ig = true; set(KEY_YT); set(KEY_IG); render();
+    document.getElementById("gateBox").scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+
+  openBtn.addEventListener("click", function (e) {
+    if (!(state.yt && state.ig)) { e.preventDefault(); }
+  });
+
+  render();
+})();
+</script>
+
+</body>
+</html>
