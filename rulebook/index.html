@@ -10,11 +10,20 @@
 <link rel="icon" href="../assets/tgs_round_logo_fixed.png">
 <link rel="stylesheet" href="../style.css">
 <style>
-  /* ---------- 룰북 랜딩 전용 ---------- */
-  .rb-hero { padding-bottom: 40px; }
-  .rb-hero .hero-sub { max-width: 520px; }
+  /* ---------- 룰북 랜딩 전용 (신규 디자인 시스템) ---------- */
+  .rb-hero { padding: 58px 0 26px; text-align: center; }
+  .rb-logo {
+    width: 118px; height: 118px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--gold);
+    box-shadow: 0 10px 34px rgba(0,0,0,.45);
+    margin-bottom: 20px;
+  }
+  .rb-hero h1 .gold { color: var(--gold); }
+  .rb-hero .hero-sub { max-width: 560px; margin-left: auto; margin-right: auto; }
 
-  .steps {
+  .rb-steps {
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
@@ -22,63 +31,62 @@
     margin: 0 auto;
   }
 
-  .step-card {
-    background: var(--green-800);
-    border: 1px solid rgba(201, 162, 75, 0.3);
-    border-radius: var(--radius);
-    padding: 24px 22px;
+  .rb-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 26px 22px;
     text-align: center;
-    transition: border-color 0.2s ease;
   }
 
-  .step-card .step-label {
-    color: var(--gold-400);
-    font-size: 0.75rem;
-    font-weight: 700;
+  .rb-card .step-label {
+    color: var(--gold);
+    font-size: 12px;
+    font-weight: 800;
     letter-spacing: 0.22em;
     margin-bottom: 8px;
   }
 
-  .step-card h3 { font-size: 1.15rem; font-weight: 800; word-break: keep-all; }
-  .step-card p { margin-top: 6px; color: var(--cream-dim); font-size: 0.92rem; word-break: keep-all; }
-  .step-card .btn { margin-top: 16px; width: 100%; }
+  .rb-card h3 { font-size: 19px; font-weight: 800; word-break: keep-all; }
+  .rb-card p { margin-top: 6px; color: var(--mut); font-size: 15px; word-break: keep-all; }
+  .rb-card .btn { margin-top: 16px; width: 100%; }
 
-  .step-card .step-status {
+  .rb-card .step-status {
     display: block;
     margin-top: 12px;
-    font-size: 0.85rem;
+    font-size: 14px;
     font-weight: 700;
-    color: var(--cream-dim);
+    color: var(--mut);
   }
 
-  .step-card.done { border-color: var(--gold-500); }
-  .step-card.done .step-status { color: var(--gold-300); }
-  .step-card.done .btn {
+  .rb-card.done { border-color: var(--gold); }
+  .rb-card.done .step-status { color: var(--gold); }
+  .rb-card.done .btn {
     background: transparent;
-    border-color: var(--gold-500);
-    color: var(--gold-300);
+    border: 1px solid var(--gold);
+    color: var(--gold);
     pointer-events: none;
   }
 
   .gate-box {
     max-width: 560px;
     margin: 28px auto 0;
-    background: linear-gradient(135deg, var(--green-800), var(--green-900));
-    border: 1px solid var(--gold-500);
-    border-radius: var(--radius);
+    background: var(--panel);
+    border: 1px solid var(--gold);
+    border-radius: 20px;
     padding: 32px 24px;
     text-align: center;
   }
 
-  .gate-box .rf-icon { font-size: 2.4rem; margin-bottom: 10px; }
-  .gate-box h2 { font-size: 1.4rem; font-weight: 800; word-break: keep-all; }
-  .gate-box p { margin: 10px auto 22px; color: var(--cream-dim); word-break: keep-all; }
+  .gate-box .rf-icon { font-size: 38px; margin-bottom: 10px; }
+  .gate-box h2 { font-size: 23px; font-weight: 800; word-break: keep-all; }
+  .gate-box p { margin: 10px auto 22px; color: var(--mut); word-break: keep-all; }
 
-  .btn-big { width: 100%; padding: 16px 22px; font-size: 1.05rem; }
+  .btn-big { width: 100%; padding: 16px 22px; font-size: 17px; }
 
   .btn-locked {
-    background: var(--green-700);
-    color: var(--cream-dim);
+    background: var(--panel2);
+    color: var(--mut);
     cursor: not-allowed;
     pointer-events: none;
   }
@@ -86,26 +94,26 @@
   .already-link {
     display: inline-block;
     margin-top: 18px;
-    font-size: 0.88rem;
-    color: var(--cream-dim);
+    font-size: 14px;
+    color: var(--mut);
     text-decoration: underline;
     text-underline-offset: 3px;
     cursor: pointer;
   }
-  .already-link:hover { color: var(--gold-300); }
+  .already-link:hover { color: var(--gold); }
 
   .mail-box {
     max-width: 560px;
     margin: 20px auto 0;
-    background: var(--green-800);
-    border: 1px solid rgba(201, 162, 75, 0.3);
-    border-radius: var(--radius);
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 20px;
     padding: 28px 24px;
     text-align: center;
   }
 
-  .mail-box h2 { font-size: 1.25rem; font-weight: 800; word-break: keep-all; }
-  .mail-box p { margin: 10px auto 20px; color: var(--cream-dim); font-size: 0.95rem; word-break: keep-all; }
+  .mail-box h2 { font-size: 20px; font-weight: 800; word-break: keep-all; }
+  .mail-box p { margin: 10px auto 20px; color: var(--mut); font-size: 15px; word-break: keep-all; }
   .mail-box .btn { width: 100%; }
 </style>
 </head>
@@ -131,24 +139,24 @@
       <span>Tony Golfstory<span class="brand-sub">TGS GOLF TV</span></span>
     </a>
     <nav class="main-nav" aria-label="주 메뉴">
-      <a href="../index.html#viral">바이럴 영상</a>
-      <a href="../index.html#lesson-videos">레슨 영상</a>
-      <a href="../index.html#rulefinder">룰 파인더</a>
-      <a href="../index.html#channels">채널·SNS</a>
+      <a href="../index.html#shows">오리지널 시리즈</a>
+      <a href="../index.html#diagnosis">스윙 진단</a>
       <a href="../index.html#lessons">레슨 안내</a>
+      <a href="../index.html#videos">최신 영상</a>
+      <a href="../index.html#rules">룰 파인더</a>
     </nav>
     <a class="lang-switch" href="../en/rulebook/" hreflang="en">EN</a>
-    <a class="btn btn-gold btn-subscribe" href="https://www.youtube.com/@tonygolfstory?sub_confirmation=1" target="_blank" rel="noopener">▶ 유튜브 구독</a>
+    <a class="btn btn-subscribe" href="https://www.youtube.com/@tonygolfstory?sub_confirmation=1" target="_blank" rel="noopener">▶ 유튜브 구독</a>
   </div>
 </header>
 
 <main>
 
   <!-- ================= 히어로 ================= -->
-  <section class="hero rb-hero">
+  <section class="rb-hero">
     <div class="wrap">
-      <img class="hero-logo" src="../assets/tgs_round_logo_fixed.png" alt="Tony Golfstory 로고">
-      <p class="hero-eyebrow">TGS RULE FINDER</p>
+      <img class="rb-logo" src="../assets/tgs_round_logo_fixed.png" alt="Tony Golfstory 로고">
+      <p class="eyebrow">TGS RULE FINDER</p>
       <h1>토니 프로의 룰 파인더,<br><span class="gold">무료로 받아가세요</span> ⛳</h1>
       <p class="hero-sub">
         공이 나뭇가지에 끼었을 때, 피치마크 구제는 언제 되는지 —<br>
@@ -159,23 +167,23 @@
   </section>
 
   <!-- ================= 스텝 & 게이트 ================= -->
-  <section class="section" style="padding-top: 8px;">
+  <section style="padding-top: 8px;">
     <div class="wrap">
 
-      <div class="steps">
-        <div class="step-card" id="stepYtCard">
+      <div class="rb-steps">
+        <div class="rb-card" id="stepYtCard">
           <p class="step-label">STEP 1</p>
           <h3>유튜브 구독하기</h3>
           <p>매일 아침 골프 뉴스와 실전 레슨이 올라오는 채널입니다.</p>
-          <a class="btn btn-gold" id="stepYt" href="https://www.youtube.com/@tonygolfstory?sub_confirmation=1" target="_blank" rel="noopener">▶ 유튜브 구독하기</a>
+          <a class="btn" id="stepYt" href="https://www.youtube.com/@tonygolfstory?sub_confirmation=1" target="_blank" rel="noopener">▶ 유튜브 구독하기</a>
           <span class="step-status" id="stepYtStatus">아직 완료 전이에요</span>
         </div>
 
-        <div class="step-card" id="stepIgCard">
+        <div class="rb-card" id="stepIgCard">
           <p class="step-label">STEP 2</p>
           <h3>인스타그램 팔로우하기</h3>
           <p>릴스와 레슨 소식이 올라오는 @tonygolfstory 계정입니다.</p>
-          <a class="btn btn-gold" id="stepIg" href="https://www.instagram.com/tonygolfstory" target="_blank" rel="noopener">인스타그램 팔로우하기</a>
+          <a class="btn" id="stepIg" href="https://www.instagram.com/tonygolfstory" target="_blank" rel="noopener">인스타그램 팔로우하기</a>
           <span class="step-status" id="stepIgStatus">아직 완료 전이에요</span>
         </div>
       </div>
@@ -184,7 +192,7 @@
         <div class="rf-icon">⛳</div>
         <h2>룰 파인더 열기</h2>
         <p id="gateMsg">구독·팔로우 후 열립니다. 위 두 단계를 완료해 주세요.</p>
-        <a class="btn btn-gold btn-big btn-locked" id="rfOpen" href="https://tonygolfstory.github.io/tgs-rule-finder/" target="_blank" rel="noopener" aria-disabled="true">🔒 룰 파인더 열기</a>
+        <a class="btn btn-big btn-locked" id="rfOpen" href="https://tonygolfstory.github.io/tgs-rule-finder/" target="_blank" rel="noopener" aria-disabled="true">🔒 룰 파인더 열기</a>
         <br>
         <a class="already-link" id="alreadyDone" href="#">이미 구독·팔로우 중이에요</a>
       </div>
@@ -192,7 +200,7 @@
       <div class="mail-box">
         <h2>📬 룰북·새 영상 소식, 메일로 받기</h2>
         <p>룰북 업데이트와 새 영상 소식을 이메일로 보내드립니다. 이메일 주소 하나만 남겨 주세요.</p>
-        <a class="btn btn-outline" href="https://docs.google.com/forms/d/e/1FAIpQLScWCfjK_3pqVAxOkb_AXLWIZ5aYGYSbBRJlcSTKNJV5aik_ag/viewform" target="_blank" rel="noopener">이메일로 소식 받기</a>
+        <a class="btn alt" href="https://docs.google.com/forms/d/e/1FAIpQLScWCfjK_3pqVAxOkb_AXLWIZ5aYGYSbBRJlcSTKNJV5aik_ag/viewform" target="_blank" rel="noopener">이메일로 소식 받기</a>
       </div>
 
     </div>
